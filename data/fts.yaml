@@ -1,0 +1,53 @@
+imageType:
+  Original: {}
+  #Wavelet: {}
+
+featureClass:
+  shape2D:
+    - 'Sphericity'
+    - 'MinorAxisLength'
+    - 'Elongation'
+    - 'Perimeter'
+    - 'PixelSurface'
+  #glcm:
+    #- 'ClusterProminence'
+  glszm:
+    - 'ZoneEntropy'
+  glrlm:
+    - 'RunEntropy'
+    #- 'ShortRunEmphasis'
+  ngtdm:
+    - 'Strength'
+    #- 'Coarseness'
+
+setting:
+  # Normalization:
+  #normalize: true
+  #normalizeScale: 100
+  
+  # Resampling:
+  # first dimensions always correspond to in-plane resolution.
+  # Z-plane resolution should not be modified to avoid mask errors (> than 1 slice after resampling)
+  #interpolator: 'sitkBSpline'
+  #resampledPixelSpacing: [2, 2, 0]
+  
+  #padDistance: 10
+  #preCrop: true
+
+
+  # 2D settings
+  # force2Ddimension setting is relative to the acquisition plane.
+  # For example, the axial plane (0) corresponds to the acquisition plane (axial, sagittal or coronal) of the MRI volume.
+  # Therefore, in most cases this setting should not be modified.
+  force2D: true
+  force2Ddimension: 0
+  
+  # Image discretization:
+  # This parameter should be estimated by analyzing the dataset firstorder range and chosen to be as close as possible to the 30-130 range. 
+  binWidth: 25
+
+  # first order specific settings:
+  #voxelArrayShift: 300
+
+  # Misc:
+  label: 255
